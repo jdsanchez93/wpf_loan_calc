@@ -1,0 +1,47 @@
+﻿<Window x:Class="LineChartTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LineChartTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1050">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="750"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*" MinWidth="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Column="0" MinHeight="172" VerticalAlignment="Stretch">
+                <local:LoanCalculator x:Name="LoanChart"></local:LoanCalculator>
+            </Grid>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Right" VerticalAlignment="Stretch" ResizeBehavior="PreviousAndNext"></GridSplitter>
+            <Grid Column="2">
+                <StackPanel Orientation="Vertical">
+                    <WrapPanel>
+                        <Label MinWidth="130">Principle</Label>
+                        <TextBox Name="PrincipleTextBox" MinWidth="125" ></TextBox>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Label MinWidth="130">Interest</Label>
+                        <TextBox Name="InterestTextBox" MinWidth="125"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Label MinWidth="130">Rate</Label>
+                        <TextBox x:Name="RateTextBox" MinWidth="125"/>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Label MinWidth="130">Monthly Payment</Label>
+                        <TextBox Name="MonthlyPaymentTextBox" MinWidth="125"></TextBox>
+                    </WrapPanel>
+                    
+                    <Border Height="50"></Border>
+                    <Button Name="SubmitButton" Height="25" Click="SubmitButton_Click">Submit</Button>
+                    <Border Height="50"></Border>
+                    <TextBox Name="TestTextBox" Height="150"></TextBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
